@@ -22,7 +22,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/',(req,res)=>{
-    res.send("Welcome")
+    res.json({
+        getProduct:"/api/products/",
+        getSingleProduct:"/api/products/:id",
+        productCreat:"/api/products/:id",
+        productUpdate:"/api/products/:id",
+        productDelete:"/api/products/:id"
+
+    })
 })
 
 app.use('/', route)
